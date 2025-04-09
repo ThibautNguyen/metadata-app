@@ -1,54 +1,44 @@
 import streamlit as st
-import os
-import sys
 
 # Configuration de la page
 st.set_page_config(
-    page_title="Gestion des Métadonnées",
-    page_icon="📊",
-    layout="wide",
-    initial_sidebar_state="expanded"
+    page_title='Metadata Manager',
+    page_icon='??',
+    layout='wide'
 )
 
-# Ajout du chemin pour les modules personnalisés
-parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-if parent_dir not in sys.path:
-    sys.path.append(parent_dir)
-
 # Titre et introduction
-st.title("Système de Gestion des Métadonnées")
-st.markdown("""
-Cette application permet de gérer les métadonnées de vos jeux de données statistiques.
-Elle offre les fonctionnalités suivantes :
-""")
+st.title('Metadata Management System')
+st.write('This application allows you to manage metadata for your datasets.')
 
-# Création des cartes pour les fonctionnalités
+# Creation des cartes pour les fonctionnalites
 col1, col2 = st.columns(2)
 
 with col1:
-    st.info("### 📝 Saisie des métadonnées")
-    st.markdown("""
-    Créez et modifiez facilement des fiches de métadonnées pour vos données.
+    st.info('### ?? Metadata Entry')
+    st.write('''
+    Create and edit metadata records easily.
     
-    Fonctionnalités:
-    - Formulaire structuré
-    - Validation automatique
-    - Enregistrement en JSON et TXT
-    """)
-    st.page_link("pages/02_Saisie.py", label="Accéder à la saisie", icon="✏️")
+    Features:
+    - Structured form
+    - Automatic validation
+    - JSON and TXT storage
+    ''')
+    st.page_link('pages/02_Saisie.py', label='Go to Entry Form', icon='??')
 
 with col2:
-    st.info("### 🔍 Recherche")
-    st.markdown("""
-    Recherchez rapidement parmi les métadonnées existantes.
+    st.info('### ?? Search')
+    st.write('''
+    Search quickly through existing metadata.
     
-    Fonctionnalités:
-    - Recherche par mot-clé
-    - Filtrage par catégorie
-    - Accès direct aux fiches
-    """)
-    st.page_link("pages/03_Recherche.py", label="Accéder à la recherche", icon="🔎")
+    Features:
+    - Keyword search
+    - Category filtering
+    - Direct access to records
+    ''')
+    st.page_link('pages/03_Recherche.py', label='Go to Search', icon='??')
 
-# Pied de page
-st.markdown("---")
-st.markdown("© 2025 - Système de Gestion des Métadonnées v1.0") 
+# Footer
+st.markdown('---')
+st.write('? 2025 - Metadata Management System v1.0')
+
